@@ -451,7 +451,7 @@ function! s:on_leaving_submode(submode)  "{{{2
     endif
 
       " BUGS: :redraw! doesn't redraw 'showmode'.
-    execute "normal! \<C-l>"
+    " execute "normal! \<C-l>"
 
     if s:insert_mode_p(mode())
       call setpos('.', cursor_position)
@@ -463,6 +463,7 @@ function! s:on_leaving_submode(submode)  "{{{2
     call getchar()
   endif
   call s:restore_options()
+  echo ''
   return ''
 endfunction
 
